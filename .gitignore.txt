@@ -1,0 +1,16 @@
+# IntelliJ
+.idea/
+*.iml
+target/
+
+# Node
+node_modules/
+dist/
+
+# Secrets
+application.properties
+.env
+
+# OS
+.DS_Store
+Thumbs.db
