@@ -18,11 +18,6 @@ Clean Layered Backend Architecture
 
 React State Management & API Integration
 
-🎥 Project Demonstration
-
-📺 Watch the complete walkthrough:
-👉 https://youtu.be/_UNE39gZrV4
-
 🏗️ System Architecture
 React (Frontend - WebStorm)
         ↓ REST APIs
