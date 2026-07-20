@@ -1,292 +1,414 @@
-🧾 Retail Billing System (Full Stack POS Application)
+# 🧾 Retail Billing System (Full Stack POS Application)
 
-A production-ready Full Stack Retail Billing / Point of Sale (POS) System built using Spring Boot + React.js, implementing secure authentication, RESTful APIs, inventory management, and payment integration.
+A production-ready **Full Stack Retail Billing / Point of Sale (POS) Application** built using **Spring Boot + React.js**, implementing secure authentication, RESTful APIs, inventory management, billing, and Razorpay payment integration.
 
 This project demonstrates strong understanding of:
 
-Full Stack Application Architecture
+- Full Stack Application Development
+- REST API Design & Integration
+- JWT-Based Authentication
+- Inventory & Billing Management
+- Database Design using JPA/Hibernate
+- Secure Backend Architecture
+- React State Management
+- Responsive UI Development
+- Payment Gateway Integration
+- Production Deployment
 
-REST API Development
+---
 
-JWT-Based Authentication
+# 🏗️ System Architecture
 
-Database Design & ORM (JPA/Hibernate)
-
-Payment Gateway Integration
-
-Clean Layered Backend Architecture
-
-React State Management & API Integration
-
-🏗️ System Architecture
-React (Frontend - WebStorm)
-        ↓ REST APIs
-Spring Boot (Backend - IntelliJ)
+```
+React.js Frontend
         ↓
-      MySQL Database
-🚀 Tech Stack
-🔵 Backend
+     REST APIs
+        ↓
+Spring Boot Backend
+        ↓
+    MySQL Database
+```
 
-Java 17
+---
 
-Spring Boot
+# 🚀 Tech Stack
 
-Spring Security
+## 🔵 Backend
 
-JWT Authentication
+- Java 17
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- Spring Data JPA (Hibernate)
+- MySQL
+- Maven
 
-Spring Data JPA (Hibernate)
+## 🟢 Frontend
 
-MySQL
+- React.js
+- Axios
+- React Router
+- Context API
+- Bootstrap / Tailwind CSS
+- React Hot Toast
+- Lucide React Icons
 
-Maven
+## 💳 Payment Integration
 
-🟢 Frontend
+- Razorpay Payment Gateway
 
-React.js
+## ☁️ Deployment
 
-Axios
+- Render (Backend)
+- Netlify (Frontend)
 
-React Router
+## 🧰 Tools
 
-Context API
+- IntelliJ IDEA
+- VS Code / WebStorm
+- Postman
+- MySQL Workbench
+- Git & GitHub
 
-Bootstrap
+---
 
-💳 Integration
+# 📂 Project Structure
 
-Razorpay Payment Gateway
+## 🔵 Backend Structure (Spring Boot)
 
-🧰 Tools
-
-IntelliJ IDEA (Backend)
-
-WebStorm (Frontend)
-
-Postman
-
-MySQL Workbench
-
-📂 Project Structure
-🔵 Backend Structure (IntelliJ – Spring Boot)
+```text
 billing-backend/
 │
 ├── src/main/java/com/billing/
-│   ├── config/
-│   │   ├── SecurityConfig.java
-│   │   ├── JwtFilter.java
-│   │   └── CorsConfig.java
-│   │
-│   ├── controller/
-│   │   ├── AuthController.java
-│   │   ├── CategoryController.java
-│   │   ├── ItemController.java
-│   │   └── OrderController.java
-│   │
-│   ├── service/
-│   │   ├── AuthService.java
-│   │   ├── CategoryService.java
-│   │   ├── ItemService.java
-│   │   └── OrderService.java
-│   │
-│   ├── repository/
-│   │   ├── UserRepository.java
-│   │   ├── CategoryRepository.java
-│   │   ├── ItemRepository.java
-│   │   └── OrderRepository.java
-│   │
-│   ├── model/
-│   │   ├── User.java
-│   │   ├── Category.java
-│   │   ├── Item.java
-│   │   ├── Order.java
-│   │   └── OrderItem.java
-│   │
-│   └── BillingApplication.java
 │
-├── src/main/resources/
-│   ├── application.properties
-│   └── data.sql
+├── config/
+│   ├── SecurityConfig.java
+│   ├── JwtFilter.java
+│   └── CorsConfig.java
 │
-├── pom.xml
-└── README.md
-Backend Design Pattern
+├── controller/
+│   ├── AuthController.java
+│   ├── CategoryController.java
+│   ├── ItemController.java
+│   ├── OrderController.java
+│   └── PaymentController.java
+│
+├── service/
+│   ├── AuthService.java
+│   ├── CategoryService.java
+│   ├── ItemService.java
+│   ├── OrderService.java
+│   └── PaymentService.java
+│
+├── repository/
+│   ├── UserRepository.java
+│   ├── CategoryRepository.java
+│   ├── ItemRepository.java
+│   ├── OrderRepository.java
+│   └── OrderItemRepository.java
+│
+├── model/
+│   ├── User.java
+│   ├── Category.java
+│   ├── Item.java
+│   ├── Order.java
+│   └── OrderItem.java
+│
+└── BillingApplication.java
 
-Layered Architecture (Controller → Service → Repository)
+resources/
+│
+├── application.properties
+└── data.sql
 
-DTO Pattern (optional enhancement)
+pom.xml
+README.md
+```
 
-Stateless JWT Authentication
+### Backend Design Pattern
 
-Role-Based Authorization
+- Layered Architecture (Controller → Service → Repository)
+- JWT Stateless Authentication
+- Secure REST APIs
+- Role-Based Authorization
+- DTO Pattern
 
-🟢 Frontend Structure (WebStorm – React)
+---
+
+## 🟢 Frontend Structure (React.js)
+
+```text
 billing-frontend/
 │
 ├── public/
-│   └── index.html
 │
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Sidebar.jsx
-│   │   ├── Category/
-│   │   ├── Items/
-│   │   ├── Orders/
-│   │   └── Auth/
-│   │
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Login.jsx
-│   │   ├── Register.jsx
-│   │   ├── Billing.jsx
-│   │   └── OrderHistory.jsx
-│   │
-│   ├── services/
-│   │   ├── ApiService.js
-│   │   ├── AuthService.js
-│   │   └── OrderService.js
-│   │
-│   ├── context/
-│   │   └── AppContext.jsx
-│   │
-│   ├── App.js
-│   └── index.js
 │
-├── package.json
-└── README.md
-Frontend Architecture
+├── components/
+│   ├── Navbar.jsx
+│   ├── Sidebar.jsx
+│   ├── Category/
+│   ├── Items/
+│   ├── Billing/
+│   └── Auth/
+│
+├── pages/
+│   ├── Dashboard.jsx
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── Billing.jsx
+│   ├── Inventory.jsx
+│   └── OrderHistory.jsx
+│
+├── services/
+│   ├── ApiService.js
+│   ├── AuthService.js
+│   └── OrderService.js
+│
+├── context/
+│   └── AppContext.jsx
+│
+├── App.js
+└── index.js
 
-Component-based architecture
+package.json
+README.md
+```
 
-Centralized API service layer
+### Frontend Architecture
 
-Context API for global state
+- Component-Based Architecture
+- Protected Routes
+- Global State Management with Context API
+- Centralized API Layer
+- Real-Time Notifications
 
-Protected Routes for authentication
+---
 
-🔐 Key Features
-✔ Authentication & Authorization
+# 🔐 Key Features
 
-User Registration & Login
+## ✔ Authentication & Security
 
-JWT-based stateless authentication
+- User Registration
+- Secure Login
+- JWT-Based Authentication
+- Protected Routes
+- Role-Based Access
 
-Role-based access control
+---
 
-✔ Inventory Management
+## ✔ Inventory Management
 
-Category CRUD operations
+- Category CRUD
+- Product CRUD
+- Stock Tracking
+- Product Search
+- Product Management
 
-Item CRUD operations
+---
 
-Stock tracking
+## ✔ Billing System
 
-✔ Billing System
+- Add Products to Cart
+- Quantity Management
+- Automatic Bill Calculation
+- Generate Orders
+- Order History
 
-Add items to cart
+---
 
-Auto total calculation
+## ✔ Payment Integration
 
-Generate order records
+- Razorpay Order Creation
+- Secure Payment Verification
+- Payment Success & Failure Handling
 
-View order history
+---
 
-✔ Payment Integration
+## ✔ Dashboard
 
-Razorpay order creation
+- Total Revenue
+- Total Orders
+- Inventory Overview
+- Recent Sales
+- Business Insights
 
-Payment verification
+---
 
-Secure backend validation
+## ✔ User Experience
 
-🗄️ Database Design
-Core Entities
+- Responsive UI
+- Toast Notifications
+- Loading Indicators
+- Modern Dashboard Design
 
+---
+
+# 🗄️ Database Design
+
+## Core Entities
+
+- User
+- Category
+- Item
+- Order
+- OrderItem
+
+### Relationships
+
+```
 User
+ └── 1 ------ * Order
 
 Category
-
-Item
+ └── 1 ------ * Item
 
 Order
+ └── 1 ------ * OrderItem
+```
 
-OrderItem
+---
 
-Relationships
-User      1 --- *  Order
-Category  1 --- *  Item
-Order     1 --- *  OrderItem
-⚙️ Setup Instructions
-🖥️ Backend Setup (IntelliJ)
-1️⃣ Create Database
+# ⚙️ Setup Instructions
+
+## 🖥️ Backend Setup
+
+### 1️⃣ Create Database
+
+```sql
 CREATE DATABASE billing_db;
-2️⃣ Configure application.properties
+```
+
+### 2️⃣ Configure application.properties
+
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/billing_db
 spring.datasource.username=root
 spring.datasource.password=your_password
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-3️⃣ Run Backend
+```
+
+### 3️⃣ Run Backend
+
+```bash
 mvn spring-boot:run
+```
 
-Backend runs at:
+Backend URL
 
+```
 http://localhost:8080
-🌐 Frontend Setup (WebStorm)
-1️⃣ Install Dependencies
+```
+
+---
+
+## 🌐 Frontend Setup
+
+### 1️⃣ Install Dependencies
+
+```bash
 npm install
-2️⃣ Start Application
+```
+
+### 2️⃣ Run Frontend
+
+```bash
 npm start
+```
 
-Frontend runs at:
+Frontend URL
 
+```
 http://localhost:3000
-🔄 API Communication Example
+```
+
+---
+
+# ☁️ Deployment Guide
+
+### Backend Deployment
+
+- Deploy Spring Boot Backend on **Render**
+
+### Frontend Deployment
+
+- Deploy React Frontend on **Netlify**
+
+---
+
+# 🔄 API Communication Example
+
+```javascript
 axios.get("http://localhost:8080/api/categories", {
   headers: {
     Authorization: "Bearer " + token
   }
 });
-🧪 Testing
+```
 
-Postman for API testing
+---
 
-MySQL Workbench for database verification
+# 🧪 Testing & Debugging
 
-Chrome DevTools for frontend debugging
+- Postman for API Testing
+- MySQL Workbench for Database Verification
+- Chrome DevTools
+- Console Logs
 
-📈 Scalability & Future Enhancements
+---
 
-Docker containerization
+# 📸 Screenshots
 
-Redis caching
+Add screenshots here for:
 
-Admin analytics dashboard
+- Login Page
+- Registration Page
+- Dashboard
+- Inventory
+- Billing Screen
+- Order History
+- Razorpay Payment
 
-Invoice PDF generation
+---
 
-Cloud deployment (AWS / Render)
+# 📈 Future Enhancements
 
-CI/CD pipeline integration
+- Invoice PDF Generation
+- Barcode Scanner
+- GST Billing
+- Admin Analytics Dashboard
+- Docker Support
+- Redis Caching
+- AWS Deployment
+- CI/CD Pipeline
 
-🎯 Why This Project Stands Out
+---
 
-Real-world business use case
+# 🎯 Why This Project Stands Out
 
-Secure authentication implementation
+- Real-world Retail Billing & POS System
+- Secure Authentication using JWT
+- Razorpay Payment Integration
+- Inventory Management
+- Full Stack Deployment Ready
+- Modern Responsive Dashboard
+- Clean Scalable Backend Design
+- Resume-ready Advanced Project
 
-Clean backend architecture
+---
 
-Proper database relationships
+# 👨‍💻 Developer
 
-Payment gateway integration
+**Sambhav Gupta**
 
-Resume-ready full stack application
+**B.Tech – Information Science Engineering**
 
-👨‍💻 Developer
+**Full Stack Developer | Java | Spring Boot | React**
 
-Sambhav Gupta
-B.Tech – Information Science Engineering
-Full Stack Developer | Java | Spring Boot | React
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
