@@ -57,11 +57,6 @@ Spring Boot Backend
 
 - Razorpay Payment Gateway
 
-## ☁️ Deployment
-
-- Render (Backend)
-- Netlify (Frontend)
-
 ## 🧰 Tools
 
 - IntelliJ IDEA
@@ -323,18 +318,6 @@ Frontend URL
 ```
 http://localhost:3000
 ```
-
----
-
-# ☁️ Deployment Guide
-
-### Backend Deployment
-
-- Deploy Spring Boot Backend on **Render**
-
-### Frontend Deployment
-
-- Deploy React Frontend on **Netlify**
 
 ---
 
